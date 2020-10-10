@@ -1,0 +1,51 @@
+{
+  "name": "Browser",
+  "productName": "Browser",
+  "version": "1.0",
+  "description": "simple browser",
+  "license": "MIT",
+  "author": {
+    "name": "Jesús Acuña",
+    "email": "manuelmaciel7001@hotmail.com",
+    "url": "manuelmaciel.vercel.app"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "electron-context-menu": "^0.10.0",
+    "electron-debug": "^2.0.0",
+    "electron-dl": "^1.11.0",
+    "electron-store": "^2.0.0",
+    "event-emitter-es6": "^1.1.5",
+    "favicon-url": "^0.0.5",
+    "update-electron-app": "^1.3.0"
+  },
+  "devDependencies": {
+    "electron": "^4.0.0-nightly.20181010",
+    "electron-builder": "^20.25.0"
+  },
+  "xo": {
+    "envs": [
+      "node",
+      "browser"
+    ]
+  },
+  "scripts": {
+    "postinstall": "electron-builder install-app-deps",
+    "test": "xo",
+    "start": "electron .",
+    "dist": "electron-builder --mac"
+  },
+  "build": {
+    "files": [
+      "**/*"
+    ],
+    "appId": "mm.browser",
+    "mac": {
+      "category": "public.app-category.social-networking",
+      "target": [
+        "dir"
+      ],
+      "electronUpdaterCompatibility": ">=2.16.0"
+    }
+  }
+}
